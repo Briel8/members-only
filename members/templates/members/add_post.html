@@ -1,0 +1,9 @@
+{% extends 'members/base.html' %}
+
+{% block content %}
+  <form method="post" action="{% url 'members:add_post' %}">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="post">
+  </form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'members/base.html' %}
+
+{% block content %}
+<ul>
+    {% for post in posts %}
+      <li><a href="{% url 'members:detail' post.id %}">{{ post.title }}</a></li>
+    {% empty %}
+      <p>There are no posts yet on this page.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

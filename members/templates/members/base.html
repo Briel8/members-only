@@ -1,0 +1,18 @@
+{% block nav %}
+<nav>
+  <a href="{% url 'members:index' %}">Home</a> -
+    <a href="{% url 'members:add_post' %}">Add</a>
+  {% endblock %}
+</nav>
+
+<nav class="authenticate section">
+  {% if user.is_authenticated %}
+    <p>Hello {{ user.username }}</p> -
+    <a href="{% url 'members:logout_member' %}">Logout</a>
+  {% else %}
+    <a href="{% url 'members:log_in' %}">Log in</a> -
+    <a href="{% url 'members:signup' %}">Sign Up</a>
+  {% endif %}
+</nav>
+
+{% block content %}{% endblock %}

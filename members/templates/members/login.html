@@ -1,0 +1,14 @@
+{% extends 'members/base.html' %}
+
+{% block content %}
+  {% if form.errors %}
+    {% for field, error in form.errors.items %}
+      <p>{{ error }}</p>
+    {% endfor %}
+  {% endif %}
+  <form method="post" action="{% url 'members:log_in' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Login">
+  </form>
+{% endblock %}
