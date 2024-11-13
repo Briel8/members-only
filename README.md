@@ -3,12 +3,12 @@
 ## This serves to document the Journey so as to look back and continue to learn from past achievements and mistakes.
 
 ## Goal:
-`To practice:
+To practice:
 1. Create Models
 2. Create forms
 3. Login and Logout Users
 4. Basic Validation
-`
+
 
 ## Ecountered:
 ### Could not login users
