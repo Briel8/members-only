@@ -40,11 +40,8 @@ def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
             # log em in
-            username = request.POST['username']
-            password = request.POST['password']
-            user = authenticate(request, username=username, password=password)
             login(request, user)
             return redirect('members:index')
         return render(request, 'members/signup.html', {'form': form})
